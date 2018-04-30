@@ -1,0 +1,182 @@
+	USE [Rentas_V1]
+	GO	
+
+	INSERT INTO [dbo].[direccion]
+	([calle],[numero],[colonia],[cp],[ciudad],[estado],[pais])
+     	VALUES
+	('Lazaro Cardenas',1163,'Parque Industrial  El Alamo',444490,'Guadalajara','Jalisco','Mexico'),
+	('Calzada de La Naranja',154,'Parque Industrial Alce Blanco',53370,'Naucalpan','Estado de Mexico','Mexico'),
+	('Prolongacion Paseo de Los Heroes',11951,'Aguacaliente',22024,'Tijuana','Baja California','Mexico'),
+	('Periferico Carlos Pellicer Camara',30,'Miguel Hidalgo',86128,'Villahermosa','Tabasco','Mexico'),
+	('Bernardo Reyes',5436,'San Jose',64270,'Monterrey','Nuevo Leon','Mexico')
+	('Carretera Central',10700,'La Raza',78120,'Soledad de Graciano Sanchez','San Luis Potosi','Mexico')
+	('Circuito Siglo',1974,'Parque Industrial EX-XXI',21254,'Mexicali','Baja California','Mexico')
+	('Agustin Melgar',3706,'Nombre de Dios',31200,'Chihuahua','Chihuahua','Mexico')
+	('Miguel Aleman',1209,'Pascual Ortiz Rubio',91750,'Veracruz','Veracruz','Mexico')
+	('Galaxia',5436,'Arque Industrial Mexicali',21210,'Mexicali','Baja California','Mexico')
+	
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[clientes]
+	([nombre],[razonSocial],[rfc],[direccion],[telefono],[movil],[correo])
+     	VALUES
+	('Diego Ghio Ramirez','RIATSA SA de CV','1234567891234',1,'21812032','8112345678','rentapc01@rentapc.com'),
+	('Jaime Gael Gonzalez Torres','Cut and Weld SA de CV','5678901234567','21375036','8112365478','solutions0@solutionsrent.com'),
+	('Alondra Gomez Llanas','JK Comercializadora SA de CV','8901234567890','21568059','8119887165','rentas3@rentas.com'),
+	('Pedro Alejandro Hernandez Trujillo','SIAC SA de CV','2345678902345',''21256980,'8112365478','dursafe4@durasafe.com'),
+	('Ana Guadalupe Santiago Iturbide','Only Music SA de CV','6789012345678','21703219','8112365478','rentcom5@rentcom.com')
+	('Nallely Jaramillo Gonzalez','LAPI SA de CV','9012345678901','21915494','8112365478','opentec6@opentec.com')
+	('Jose Reinaldo Garcia Perez','Java Office Supplies SA de CV','3456789012345','21675823','8112365478','cydcom7@cydcom.com')
+	('Mario Alfonso Zavala Altamirano','ProLimpieza SA de CV','7890123456789','21203235','8116534215','kcrentas8@kcrentas.com')
+	('Yosimar Israel Acosta Jimenez','Office XXI SA de CV','0234123456789',9,'21241456','8116968876','pcrent03@pcrent.com')
+	('Ricardo Ismael Ortiz Camacho','TLS SA de CV','5680523123456',0,'21671653','8119312347','pcfusion10@pcfusion.com')
+
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[renter]
+	([nombre],[correo],[date_ingreso],[ubicacion])
+     	VALUES
+           	('RENTAPC SA DE CV','rentapc@rentapc.com','2009-04-20 11:12:34.456',geography::Point(21.00889, 72.29452, 1.15)),					('SOLUTIONS RENT','solutions1@solutionsrent.com','2010-09-12 17:32:53.639',geography::Point(32.67891, -2.18713, 1.41)),
+	('RENTAS SA DE CV','rentas2@rentas.com','2011-01-11 05:13:51.567',geography::Point(28.95476, -102.57692, 1.31)),
+	('DURSAFE SA DE CV','dursafe3@durasafe.com','2012-02-08 20:01:32.325',geography::Point(9.98111, 138.86538, 1.03)),
+	('RENTCOM SA DE CV','rentcom4@rentcom.com','2013-03-08 19:53:21.685',geography::Point(69.21778, -156.76878, 7.94))
+	('OPENTEC','opentec5@opentec.com','2014-05-08 13:04:54.235',geography::Point(20.19659, 37.40181, 1.14))
+	('CYDCOM','cydcom6@cydcom.com','2015-05-08 17:35:44.136',geography::Point(-0.00108, 120.44245, 1.00))
+	('KC RENTAS','kcrentas7@kcrentas.com','2016-05-08 11:35:23.562',geography::Point(-22.66138, 114.03478, 1.17))
+	('PC RENT','pcrent8@pcrent.com','2017-05-08 22:07:29.658',geography::Point(16.87584, -97.05007, 1.09))
+	('PC FUSION','pcfusion9@pcfusion.com','2018-05-08 06:08:01.261',geography::Point(13.16328, 3.11851, 1.05))
+
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[laptop]
+	([marca],[model],[serie],[es_cpu],[es_ram],[es_DD],[es_TV])
+     	VALUES
+	('LENOVO','IP 320-14IKB','5J7J57YJNTU','Intel Core i5 7200U','4GB DDR4','1TB','HD Graphics 3000'),
+	('HP','Pavilion 1KV18UA','T32HY255UJH','AMD A12','8GB DDR3','1TB','Radeon R7'),
+	('HP','ProBook 440 G4','MUNYBTVRCEXW','Intel Core i7 7500U','8GB DDR4','1TB','HD Graphics 620'),
+	('ACER','Aspire A5','7JH5J6JMNJ',' Intel Core i5 7200U',' 12GB DDR3','500 GB','HD Graphics 620'),
+	('DELL','Vostro 14 3468','5JH56JM5RJWHR','Procesador Intel Core i3 6006U','8GB DDR4','1TB','Intel HD Graphics 520'),
+	('ASUS','X555QG','J5U7YKEY','AMD A12 9700P',' 8GB DDR4','1TB','Radeon R7')
+	('HP','Envy 13-d00Ia','5JH56UJ6TJ5Y','Intel Core i5 7200U ',' 4GB DDR4','256GB SSD','HD Graphics 520')
+	('HP','Envy 13-ad008la','RFJN6OFJ5IKG','Intel Core i7 7500U',' 8GB DDR4','360GB SSD','Nvidia Geforce 940mx')
+	('DELL','Latitude Inspiron 155567','POY03WJABN','Intel Core i5',' 8GB DDR4','1TB','HD Graphics 620')
+	('LENOVO','C13','ZDTPKNAQLHD','Intel i3 6006U',' 4GB DDR3','500GB','Integrated')
+
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[desktop]
+	([model], [marca],[es_cpu],[es_ram],[es_TM],[es_DD],[es_TV],[es_gab],[serie])
+     	VALUES
+	('','Refurbished','i5-4460','4GB DDR2','MSI','500GB','GEFORCE 630','Acteck','HN5JKOP76JY5RN'),
+	('','Refurbished','i3-4130','4GB DDR2','MSI','1TB','Nvidia geforce GTX 960','KMEX','6TI6TO6HTJ3TH'),
+	('','Refurbished','i5-4460','8GB DDR3','Asus','500GB','Nvidia geforce GTX 1080','Thermaltake','53H9J95HT56J'),
+	('','Built','i3-4130','8GB DDR4','ECS','500GB','','AeroCool','56UJHN5JIN6'),
+	('','Refubished','i3-4130','8GB DDR4','MSI','750GB','','PHANTOM ','65JMNRTETHK'),
+	('','Generica','i7-5960X','32GB DDR2','Gigabyte','2TB','Nvidia geforce GTX 960','Cooler Master','YNJMNI6TOHT6EM'),
+	('','Generica','i5-4460','16GB DDR3','Gigabyte','1TB','Nvidia geforce GTX 950 Ti','True Basix','659O5PJM75JR'),
+	('','Refubished','i3-4460','4GB DDR4','Asus','500GB','','VORAGO','7UJ6LYSDFJK673')
+
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[monitor]
+	([marca],[model],[serie],[pulgadas],[especificaciones])
+     	VALUES
+	('Samsung','C27F380FHL','V32N90','27','Bueno'),
+	('LG','19M38A','560MNB5','18.5','Con detalle'),
+	('ACER','V206HQL','M95N7YT','18.5','Con detalle'),
+	('BenQ','GW2455H','1MEVT9KB','23.6','Bueno'),
+	('HP','V194','M890NHT5','19.5','Bueno')
+	('LG','24M38H-B','M890NHT5','23.6','Bueno')
+	('Samsung','LC32F391FWLXZX','M890NHT5','31.5','Bueno')
+	('BenQ','GW2270','M890NHT5','21.5','Bueno')
+	('Dell','E1916H','M890NHT5','19','Con detalle')
+	('LG','22M38A-B','M890NHT5','21.5','Bueno')
+
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[impresora]
+	([marca],[model],[serie],[especificacion])
+    	VALUES
+	('Epson','EcoTank L380 ','Y5NMYPJN','Con detalle'),
+	('Samsung','Xpress M2070','6JHJPM6PO','Buena'),
+	('Brother','HL-L6200DW','6TJH367Y3H','Con detalle'),
+	('HP','LaserJet Pro M521dn','U8MKRT','Con detalle'),
+	('HP','OfficeJet Pro 6970','352JQFGVNG','Con detalle'),
+	('Canon','imageCLASS D1520 ','0NV3203VQ','Buena')
+	('Samsung','ProXpress M4072FD','7MYP5NOEF','Buena')
+	('Brother','DCP-L2540DW ','2GHR3TFR','Con detalle')
+	('Epson ','TM-T20II ','M092VE3RB','Buena')
+	('Epson','EcoTankL575 ','9MPNTN05','Buena')
+
+	GO
+	USE [Rentas_V1]
+	GO
+
+	INSERT INTO [dbo].[venta]
+	([date_inicio],[date_fin],[add_cliente],[add_renter],[add_contrato])
+     	VALUES
+	('2018-03-08 09:40:31.345','2018-03-08 13:32:01.234',15,2,2),
+	('2018-02-08 07:11:52.345','2018-02-08 21:09:06.234',16,3,3),
+	('2018-04-08 13:46:22.345','2018-04-08 14:48:33.234',19,4,4),
+	('2018-05-08 18:56:55.345','2018-05-08 20:13:54.234',20,5,5),
+	('2018-03-08 07:34:43.345','2018-03-08 10:35:11.234',21,6,6)
+
+	GO
+
+	UPDATE clientes 
+	SET telefono = 34569653
+	WHERE nombre = 'Rodrigo Armando Gonzalez Mendez';
+
+	UPDATE clientes 
+	SET telefono = 89350635
+	WHERE nombre = 'Ramiro Camacho Torres';
+
+	UPDATE clientes 
+	SET telefono = 09509950
+	WHERE nombre = 'Monica Alvarado Mendoza';
+
+	UPDATE clientes 
+	SET telefono = 37723511
+	WHERE nombre = 'Genaro Martinez Rodriguez';
+	
+	UPDATE clientes 
+	SET telefono = 34595380
+	WHERE nombre = 'Ivan Morales Ortiz';
+
+	GO
+	
+	DELETE FROM clientes 
+	WHERE nombre = 'Diego Ghio Ramirez';
+
+	DELETE FROM clientes 
+	WHERE nombre = 'Jaime Gael Gonzalez Torres';
+
+	DELETE FROM clientes 
+	WHERE nombre = 'Alondra Gomez Llanas';
+
+	DELETE FROM clientes 
+	WHERE nombre = 'Ana Guadalupe Santiago Iturbide';
+	
+	DELETE FROM clientes 
+	WHERE nombre = 'Ricardo Ismael Ortiz Camacho';
+
+
+
+
+
+
+
+
+
