@@ -1,0 +1,104 @@
+/*
+primero create database luego todo lo demas
+*/
+create database Rentas_V2
+
+use Rentas_V2
+
+create table clientes(
+	id_cliente int identity(1,1) primary key not null,
+	nombre varchar(50) not null,
+	razonSocial varchar(50) not null,
+	rfc varchar(50) not null,
+	direccion int not null,
+	telefono varchar(50) not null,
+	movil varchar(50),
+	correo varchar(50) not null
+)
+create table activo(
+	id_activos int identity(1,1) primary key not null,
+	id_code int not null,
+	statusEQ varchar(50) not null,
+	add_desktop int,
+	add_laptop int,
+	add_monitor int,
+	add_impresora int,
+	add_servidor int,
+)
+create table contrato(
+	id_contrato int identity(1,1) primary key not null,
+	date_inicio date not null,
+	date_fin date not null,
+	add_activos int null
+)
+create table desktop(
+	id_activo int identity(1,1) primary key not null,
+	model varchar(50) null, 
+	marca varchar(50) null,
+	es_cpu varchar(50) not null,
+	es_ram varchar(50) not null,
+	es_TM varchar(50) null,
+	es_DD varchar(50) not null,
+	es_TV varchar(50) null,
+	es_gab varchar(50) null,
+	serie varchar(50) not null,
+)
+create table direccion(
+	id_dir int identity(1,1) primary key not null,
+	calle varchar(50) not null,
+	numero int not null,
+	colonia varchar(50) not null,
+	cp int not null,
+	ciudad varchar(50) not null,
+	estado varchar(50) not null,
+	pais varchar(50) not null
+)
+create table impresora(
+	id_activo int identity(1,1) primary key not null,
+	model varchar(50) not null,
+	serie varchar(50) not null,
+	especificacion varchar(50)
+)
+create table laptop(
+	id_activo int identity(1,1) primary key not null,
+	marca varchar(50) NULL,
+	model varchar(50) null, 
+	es_cpu varchar(50) not null,
+	es_ram varchar(50) not null,
+	es_DD varchar(50) not null,
+	es_TV varchar(50) null,
+	serie varchar(50) not null,
+)
+create table monitor(
+	id_activo int identity(1,1) primary key not null,
+	model varchar(50) not null,
+	serie varchar(50) not null,
+	especificaciones varchar(50),
+	
+)
+create table renter(
+	id_user int identity(1,1) primary key not null,
+	nombre varchar(50) not null,
+	correo varchar(50) not null,
+	date_ingreso datetime,
+	ubicacion geography
+)
+create table servidor(
+	id_activo int identity(1,1) primary key not null,
+	model varchar(50) not null, 
+	serie varchar(50) not null,
+	es_cpu varchar(50) not null,
+	es_ram varchar(50) not null,
+	es_TM varchar(50) not null,
+	es_DD varchar(50) not null,
+	es_TV varchar(50),
+	es_gab varchar(50) not null
+)
+create table venta(
+	id_venta int identity(1,1) primary key not null,
+	date_inicio datetime not null,
+	date_fin datetime not null,
+	add_cliente int,
+	add_renter int,
+	add_contrato int
+)

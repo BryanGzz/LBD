@@ -1,0 +1,335 @@
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[direccion]
+           ([calle]
+           ,[numero]
+           ,[colonia]
+           ,[cp]
+           ,[ciudad]
+           ,[estado]
+           ,[pais])
+     VALUES
+        ('Lazaro Cardenas',1163,'Parque Industrial  El Alamo',444490,'Guadalajara','Jalisco','Mexico'),
+	('Calzada de La Naranja',154,'Parque Industrial Alce Blanco',53370,'Naucalpan','Estado de Mexico','Mexico'),
+	('Prolongacion Paseo de Los Heroes',11951,'Aguacaliente',22024,'Tijuana','Baja California','Mexico'),
+	('Periferico Carlos Pellicer Camara',30,'Miguel Hidalgo',86128,'Villahermosa','Tabasco','Mexico'),
+	('Bernardo Reyes',5436,'San Jose',64270,'Monterrey','Nuevo Leon','Mexico')
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[clientes]
+           ([nombre]
+           ,[razonSocial]
+           ,[rfc]
+           ,[direccion]
+           ,[telefono]
+           ,[movil]
+           ,[correo])
+     VALUES
+		('Roberto Aranda Gonzalez Perez','Delivery SA DE CV','XAXX010101000',2,'21352648','8112365478','networkers@gmail.com'),
+	('Carlos Zuazua Rodriguez','Given Solutions SA DE CV','XAXX010101000',3,'21352648','8112365478','networkers@gmail.com'),
+	('Alejandra Garcia Gonzalez','NORTEST SA DE CV','XAXX010101000',4,'21352648','8112365478','networkers@gmail.com'),
+	('Alejandro Fernandez Carrillo Espinoza','VENDORFER SA DE CV','XAXX010101000',5,'21352648','8112365478','networkers@gmail.com'),
+	('Kevin Salas Ortiz','CASH FIVE SA DE CV','XAXX010101000',6,'21352648','8112365478','networkers@gmail.com')
+
+GO
+
+
+	UPDATE clientes 
+	SET telefono = 23568542
+	WHERE nombre = 'Roberto Aranda Gonzalez Perez'
+
+	UPDATE clientes 
+	SET telefono = 78469524
+	WHERE nombre = 'Carlos Zuazua Rodriguez'
+
+	UPDATE clientes 
+	SET telefono = 98498849
+	WHERE nombre = 'Alejandra Garcia Gonzalez'
+
+	UPDATE clientes 
+	SET telefono = 55569622
+	WHERE nombre = 'Alejandro Fernandez Carrillo Espinoza'
+	UPDATE clientes 
+	SET telefono = 45485469
+	WHERE nombre = 'Kevin Salas Ortiz'
+UPDATE clientes 
+	SET movil = 8112365478
+	WHERE nombre = 'Roberto Aranda Gonzalez Perez'
+
+	UPDATE clientes 
+	SET movil = 8123654785
+	WHERE nombre = 'Carlos Zuazua Rodriguez'
+
+	UPDATE clientes 
+	SET movil = 8113269696
+	WHERE nombre = 'Alejandra Garcia Gonzalez'
+
+	UPDATE clientes 
+	SET movil = 8124578111
+	WHERE nombre = 'Alejandro Fernandez Carrillo Espinoza'
+	UPDATE clientes 
+	SET movil = 8116542225
+	WHERE nombre = 'Kevin Salas Ortiz'
+UPDATE clientes 
+	SET correo = 'deliveri@gmail.com'
+	WHERE nombre = 'Roberto Aranda Gonzalez Perez'
+
+	UPDATE clientes 
+	SET correo = 'givencross@gmail.com'
+	WHERE nombre = 'Carlos Zuazua Rodriguez'
+
+	UPDATE clientes 
+	SET correo = 'nortest@gmail.com'
+	WHERE nombre = 'Alejandra Garcia Gonzalez'
+
+	UPDATE clientes 
+	SET correo = 'vendorfest@gmail.com'
+	WHERE nombre = 'Alejandro Fernandez Carrillo Espinoza'
+	UPDATE clientes 
+	SET correo = 'cashfive..@gmail.com'
+	WHERE nombre = 'Kevin Salas Ortiz'
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[renter]
+           ([nombre]
+           ,[correo]
+           ,[date_ingreso]
+           ,[ubicacion])
+     VALUES
+           ('RENTAPC SA DE CV','rentapc@rentapc.com','2007-05-08 12:35:29.123',geography::Point(47.65100, -122.34900, 4326)),
+		   ('SOLUTIONS RENT','rentapc@rentapc.com','2007-05-08 12:35:29.123',geography::Point(47.65100, -122.34900, 4326)),
+		   ('RENTAS SA DE CV','rentapc@rentapc.com','2007-05-08 12:35:29.123',geography::Point(47.65100, -122.34900, 4326)),
+		   ('DURSAFE SA DE CV','dursafe@rentapc.com','2007-05-08 12:35:29.123',geography::Point(47.65100, -122.34900, 4326)),
+		   ('RENTCOM SA DE CV','rentcom@rentapc.com','2007-05-08 12:35:29.123',geography::Point(47.65100, -122.34900, 4326))
+
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[laptop]
+           ([marca]
+           ,[model]
+           ,[serie]
+           ,[es_cpu]
+           ,[es_ram]
+           ,[es_DD]
+           ,[es_TV])
+     VALUES
+           ('ACER','AN515-51-77V5','QWERTYUIOP','Intel Core i7 7700HQ','16GB DDR4','1TB + SOLIDO 128GB','GeForce GTX 1050M'),
+		   ('HP','15-bs015la','ASDFGHJKLÑ','Intel Core i5 7200U','8GB DDR4','1TB','Radeon 520'),
+		   ('HP','ProBook 440 G4','MUNYBTVRCEXW','Intel Core i7 7500U','8GB DDR4','1TB','HD Graphics 620'),
+		   ('ASUS','VivoBook Max X541UA','WEDWEDSQEWS',' Intel Core i5 7200U',' 8GB DDR4','1TB','HD Graphics 620'),
+		   ('DELL','Vostro 14 3468','SHFDBVUSB','Procesador Intel Core i3 6006U','8GB DDR4','1TB','Intel HD Graphics 520'),
+		   ('ASUS','X555QG','IUYK47UJTRG5','AMD A12 9700P',' 8GB DDR4','1TB','Radeon R7')
+GO
+
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[desktop]
+           ([model]
+           ,[marca]
+           ,[es_cpu]
+           ,[es_ram]
+           ,[es_TM]
+           ,[es_DD]
+           ,[es_TV]
+           ,[es_gab]
+           ,[serie])
+     VALUES
+           ('','GENERICA','i7-7700','16GB DDR4','Gigabyte','500GB','GEFORCE 630','TRUE BASIC','WEXRCTYUB25'),
+		   ('','GENERICA','i5-4460','8GB DDR3','Gigabyte','1TB','Nvidia geforce GTX 960','Cooler Master','GBYNJBR56VG16'),
+		   ('','GENERICA','i5-4460','8GB DDR3','ASUS','500GB','Nvidia geforce GTX 960','Thermaltake','VWET4G616EVT'),
+		   ('','GENERICA','i3-4130','8GB DDR3','ECS','500GB','','Thermaltake','VGT61EE96T8V6'),
+		   ('','GENERICA','i3-4130','8GB DDR3','ECS','750GB','','PHANTOM ','VWET651GV97ETG'),
+		   ('','GENERICA','i7-5960X','32GB DDR3','ASUS','2TB','Nvidia geforce GTX 960','Cooler Master','MI6YN1KK16YN'),
+		   ('','GENERICA','i7-5960X','32GB DDR3','ASUS','2TB','Nvidia geforce GTX 960','Cooler Master','YIM1N96'),
+		   ('','GENERICA','PENTIUM','4GB DDR3','ECS','500GB','','VORAGO','NY16JN7IK')
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[servidor]
+           ([model]
+           ,[marca]
+           ,[es_cpu]
+           ,[es_ram]
+           ,[es_TM]
+           ,[es_DD]
+           ,[es_TV]
+           ,[es_gab]
+           ,[serie])
+     VALUES
+           ('','GENERICA','i7-7700','32GB DDR4','Gigabyte','2tb','Nvidia geforce GTX 960','Thermaltake','NUYJFR'),
+		   ('','GENERICA','i7-4460','32GB DDR3','Gigabyte','4TB','Nvidia geforce GTX 960','Cooler Master','VERTGVE'),
+		   ('','GENERICA','i7-4460','16GB DDR3','ASUS','2TB','Nvidia geforce GTX 960','Thermaltake','EVRGV'),
+		   ('','GENERICA','i7-4130','16GB DDR3','Gigabyte','2TB','Nvidia geforce GTX 960','Thermaltake','BNTJRECF'),
+		   ('','GENERICA','i7-4130','16GB DDR3','Gigabyte','2TB','Nvidia geforce GTX 960','Thermaltake ','WCERF'),
+		   ('','GENERICA','i7-7700','32GB DDR3','ASUS','4TB','Nvidia geforce GTX 960','Cooler Master','UXQED'),
+		   ('','GENERICA','i7-7700','32GB DDR3','ASUS','4TB','Nvidia geforce GTX 960','Cooler Master','NTYJBD'),
+		   ('','GENERICA','i7-7700','16GB DDR3','Gigabyte','2TB','Nvidia geforce GTX 960','Thermaltake','BRYHTYJYJ')
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[monitor]
+           ([marca]
+           ,[model]
+           ,[serie]
+           ,[pulgadas]
+           ,[especificaciones])
+     VALUES
+           ('ACER','V206HQL','DF146GRF14','18.5','SIN DETALLES'),
+		   ('HP','V194','YJ4YJUJY','19.5','SIN DETALLES'),
+		   ('ACER','V206HQL','SWQ986','18.5','SIN DETALLES'),
+		   ('ACER','V206HQL','WDE144WEDF','18.5','CON DETALLES'),
+		   ('HP','V194','WED956562E','19.5','SIN DETALLES')
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[impresora]
+           ([marca]
+           ,[model]
+           ,[serie]
+           ,[especificacion])
+     VALUES
+           ('BROTHER','HL-L6200DW ','RHTEV14','SIN DETALLES'),
+		   ('HP','LaserJet Pro M130fw','NYUJ784461','SIN DETALLES'),
+		   ('BROTHER','HL-L6200DW ','EW974SWEQ','SIN DETALLES'),
+		   ('HP','LaserJet Pro M130fw','GTRF7184','CON DETALLES'),
+		   ('HP','LaserJet Pro M130fw','GTR81J1F','SIN DETALLES'),
+		   ('BROTHER','HL-L6200DW ','HRV1974J','SIN DETALLES')
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[activo]
+           ([id_code]
+           ,[statusEQ]
+           ,[add_desktop])
+     VALUES
+           (101,'EXCELENTE',1),
+		   (102,'EXCELENTE',2),
+		   (103,'EXCELENTE',3),
+		   (104,'EXCELENTE',4),
+		   (105,'EXCELENTE',5),
+		   (106,'EXCELENTE',6),
+		   (107,'DAÑADO',7),
+		   (108,'DAÑADO',8)
+GO
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[activo]
+           (id_code, statusEQ, add_laptop)
+     VALUES
+           (201,'EXCELENTE',1),
+		   (202,'EXCELENTE',2),
+		   (203,'EXCELENTE',3),
+		   (204,'EXCELENTE',4),
+		   (205,'DAÑADO',5),
+		   (206,'DAÑADO',6)
+
+GO
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[activo]
+           (id_code, statusEQ, add_monitor)
+     VALUES
+           (301,'EXCELENTE',1),
+		   (302,'EXCELENTE',2),
+		   (303,'EXCELENTE',3),
+		   (304,'DAÑADO',4),
+		   (305,'DAÑADO',5)
+GO
+
+USE [Rentas_V2]
+GO
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[activo]
+           (id_code, statusEQ, add_impresora)
+     VALUES
+           (401,'EXCELENTE',1),
+		   (402,'EXCELENTE',2),
+		   (403,'EXCELENTE',3),
+		   (404,'EXCELENTE',4),
+		   (405,'DAÑADO',5),
+		   (406,'DAÑADO',6)
+
+INSERT INTO [dbo].[activo]
+           (id_code, statusEQ, add_servidor)
+     VALUES
+           (501,'EXCELENTE',1),
+		   (502,'EXCELENTE',2),
+		   (503,'EXCELENTE',3),
+		   (504,'EXCELENTE',4),
+		   (505,'EXCELENTE',5),
+		   (506,'EXCELENTE',6),
+		   (507,'DAÑADO',7),
+		   (508,'DAÑADO',8)
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[contrato]
+           ([date_inicio]
+           ,[date_fin]
+           ,[add_activos])
+     VALUES
+           ('2018-04-20', '2018-04-25',1),
+		   ('2018-03-18', '2018-03-26',7),
+		   ('2018-02-03', '2018-02-16',9),
+		   ('2018-01-07', '2018-01-15',10),
+		   ('2018-05-10', '2018-05-25',13)
+GO
+
+
+USE [Rentas_V2]
+GO
+
+INSERT INTO [dbo].[venta]
+           ([date_inicio]
+           ,[date_fin]
+           ,[add_cliente]
+           ,[add_renter]
+           ,[add_contrato])
+     VALUES
+           ('2018-05-08 12:35:29.123','2018-05-08 12:35:29.123',16,1,1),
+		   ('2018-05-08 12:35:29.123','2018-05-08 12:35:29.123',17,2,2),
+		   ('2018-05-08 12:35:29.123','2018-05-08 12:35:29.123',18,3,3),
+		   ('2018-05-08 12:35:29.123','2018-05-08 12:35:29.123',19,4,4),
+		   ('2018-05-08 12:35:29.123','2018-05-08 12:35:29.123',20,5,5)
+GO
+
+
+
+
